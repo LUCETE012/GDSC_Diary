@@ -80,9 +80,10 @@ export default function EmotionPage() {
         <div className="flex h-full w-full items-center justify-center bg-white">
             <div className="flex w-full flex-col items-start gap-10 md:w-2/3">
                 <div className="flex w-full flex-row items-center justify-start gap-5">
-                    <div 
-                        className={`flex justify-center border border-${color}-100 bg-${color}-50 w-24 h-24 min-h-[6rem] min-w-[6rem] rounded-2xl text-6xl group-hover:shadow-inner group-hover:bg-${color}-100`}>
-                            {EMOTION_DATA[emotion].emoji}
+                    <div
+                        className={`flex justify-center border border-${color}-100 bg-${color}-50 group-hover:bg-${color}-100 h-24 min-h-[6rem] w-24 min-w-[6rem] rounded-2xl text-6xl group-hover:shadow-inner`}
+                    >
+                        {EMOTION_DATA[emotion].emoji}
                     </div>
                     <h1 className="flex items-center justify-center text-3xl font-medium">
                         {' '}
@@ -97,7 +98,7 @@ export default function EmotionPage() {
                         <button
                             disabled={!isRemoveSelected}
                             onClick={removeSelectDiary}
-                            className={`flex w-full justify-center rounded-xl border border-${buttonColor}-100 bg-${buttonColor}-100 p-2 text-${buttonColor}-500 hover:border-${buttonColor}-500`}
+                            className={`flex w-full justify-center rounded-xl border border-${buttonColor}-100 bg-${buttonColor}-100 text-${buttonColor}-500 p-2 hover:border-${buttonColor}-500`}
                         >
                             {isRemoveSelected
                                 ? `선택된 ${removeSelected.length}개의 일기를 삭제 합니다`

@@ -61,19 +61,16 @@ export default function DiaryDetailPage() {
                 <h1 className="flex text-3xl font-bold">{diary.title}</h1>
                 <div className="my-9 flex flex-row justify-between gap-2">
                     <div className="flex w-full justify-center rounded-xl border border-gray-100 bg-gray-100 p-2 text-sm text-gray-500 hover:border-gray-500">
-                        {' '}
-                        {formattedDate}{' '}
+                        {formattedDate}
                     </div>
                     <div className="flex w-full justify-center rounded-xl border border-gray-100 bg-gray-100 p-2 text-sm text-gray-500 hover:border-gray-500">
-                        {' '}
-                        {diary.weather}{' '}
+                        {diary.weather}
                     </div>
                     <Link
                         href={`/emotions/${diary.emotion}`}
                         className="flex w-full justify-center rounded-xl border border-gray-100 bg-gray-100 p-2 text-sm text-gray-500 hover:border-gray-500"
                     >
-                        {' '}
-                        {diary.emotion}{' '}
+                        {diary.emotion}
                     </Link>
                 </div>
                 <div className="h-2/3 text-base text-gray-800">{diary.content}</div>

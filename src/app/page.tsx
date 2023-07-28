@@ -190,7 +190,7 @@ const DiaryWriter = () => {
                 placeholder="오늘 당신의 하루는 어땠나요?"
             ></textarea>
             <button
-                className={`bg- rounded-lg border border-gray-100 p-1${color}-100 text-${color}-500 hover:border-gray-700 active:translate-y-[1px]`}
+                className={`rounded-lg border border-gray-100 p-1 bg-${color}-100 text-${color}-500 hover:border-gray-700 active:translate-y-[1px]`}
                 onClick={saveDiary}
                 disabled={!isValid}
             >
