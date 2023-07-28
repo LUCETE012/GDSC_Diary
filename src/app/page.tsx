@@ -109,7 +109,7 @@ const DiaryWriter = () => {
                         onClick={() => setEmotion('good')}
                         className={
                             emotion === 'good'
-                                ? 'bg-emerald mb-3 mr-2 flex items-center justify-center rounded-lg border bg-emerald-200 px-3 py-1.5 text-sm font-medium text-emerald-500 hover:border-emerald-500 hover:text-emerald-500 focus:outline-none active:translate-y-[1px]'
+                                ? 'mb-3 mr-2 flex items-center justify-center rounded-lg border bg-emerald-200 px-3 py-1.5 text-sm font-medium text-emerald-500 hover:border-emerald-500 hover:text-emerald-500 focus:outline-none active:translate-y-[1px]'
                                 : 'mb-3 mr-2 flex items-center justify-center rounded-lg border bg-gray-200 px-3 py-1.5 text-sm font-medium text-gray-500 hover:border-gray-900 hover:text-gray-900 focus:bg-emerald-200 focus:outline-none active:translate-y-[1px] '
                         }
                     >

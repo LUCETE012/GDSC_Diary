@@ -20,8 +20,7 @@ export const useStorageDiary = () => {
             remove: (removeId: string) => {
                 setDiary((prev) => {
                     const removedDiary = prev.filter(({ id }) => id !== removeId)
-                    if(mounted)
-                        updateStorageDiary(removedDiary)
+                    if (mounted) updateStorageDiary(removedDiary)
                     return removedDiary
                 })
             },
@@ -35,21 +34,18 @@ export const useStorageDiary = () => {
                         return updatedDiary
                     })
                 }
-                
             },
             update: (updateId: string, updateDiary: Diary) => {
-                if (mounted)
-                {
+                if (mounted) {
                     setDiary((prev) => {
                         const targetDiary = prev.find(({ id }) => id === updateId)
                         if (!targetDiary) return prev
-    
+
                         const updatedDiary = prev.map((diary) => (diary.id === updateId ? updateDiary : diary))
                         updateStorageDiary(updatedDiary)
                         return updatedDiary
                     })
                 }
-
             },
         }),
         []

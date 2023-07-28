@@ -10,7 +10,6 @@ type DiaryUpdate = React.Dispatch<React.SetStateAction<Diary[]>>
 const DiaryUpdateContext = createContext<DiaryUpdate | undefined>(undefined)
 
 const DiaryProvider = ({ children }: React.PropsWithChildren) => {
-
     const [diaries, updateDiaries] = useState<Diary[]>(() => localStorage.get<Diary[]>(DIARY_STORAGE_KEY) ?? [])
 
     return (

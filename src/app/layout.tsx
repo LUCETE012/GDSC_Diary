@@ -13,7 +13,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="kr">
             <body className={`${inter.className} h-screen max-h-screen min-h-screen`}>
-                <DiaryProvider>{children}</DiaryProvider></body>
+                <DiaryProvider>{children}</DiaryProvider>
+            </body>
         </html>
     )
 }
