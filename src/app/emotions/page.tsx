@@ -19,7 +19,7 @@ const EmotionCard = ({ color, emoji, emotion, description }: EmotionCardProps) =
             className="group flex w-full flex-row items-center justify-between gap-4 rounded-3xl border border-gray-50 p-4 hover:scale-105 hover:border-transparent hover:shadow-2xl"
         >
             <div
-                className={`flex h-24 min-h-[6rem] w-24 min-w-[6rem] justify-center items-center rounded-2xl border border-${color}-100 bg-${color}-50 group-hover:bg-${color}-100 text-6xl group-hover:shadow-inner`}
+                className={`border- flex h-24 min-h-[6rem] w-24 min-w-[6rem] items-center justify-center rounded-2xl border${color}-100 bg-${color}-50 group-hover:bg-${color}-100 text-6xl group-hover:shadow-inner`}
             >
                 {emoji}
             </div>
