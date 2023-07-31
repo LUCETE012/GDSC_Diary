@@ -186,11 +186,11 @@ const DiaryWriter = () => {
                 onChange={(event) => {
                     setContent(event.target.value)
                 }}
-                className="text-m resize-none rounded-lg p-1.5 text-gray-900 ring-gray-300 focus:outline-none focus:ring-1"
+                className="resize-none rounded-lg p-1.5 text-gray-900 ring-gray-300 focus:outline-none focus:ring-1"
                 placeholder="오늘 당신의 하루는 어땠나요?"
             ></textarea>
             <button
-                className={`bg- rounded-lg border border-gray-100 p-1${color}-100 text-${color}-500 hover:border-gray-700 active:translate-y-[1px]`}
+                className={`rounded-lg border border-gray-100 p-1 bg-${color}-100 text-${color}-500 hover:border-gray-700 active:translate-y-[1px]`}
                 onClick={saveDiary}
                 disabled={!isValid}
             >
@@ -221,11 +221,11 @@ const DiaryViewer = ({ diary }: { diary: Diary[] }) => {
                                 <h1> {props.title} </h1>
                                 <div className="flex w-full flex-row items-center justify-between gap-1">
                                     <span className="text-gray-500"> {formattedDate} </span>
-                                    <div className="gap-1s flex flex-row">
-                                        <div className="border-100 flex h-6 w-6 items-center justify-center rounded-full border p-1">
+                                    <div className="flex flex-row">
+                                        <div className="flex h-6 w-6 items-center justify-center rounded-full border p-1">
                                             {emotionEmoji[props.emotion]}
                                         </div>
-                                        <div className="border-100 flex h-6 w-6 items-center justify-center rounded-full border p-1">
+                                        <div className="flex h-6 w-6 items-center justify-center rounded-full border p-1">
                                             {weatherEmoji[props.weather]}
                                         </div>
                                     </div>

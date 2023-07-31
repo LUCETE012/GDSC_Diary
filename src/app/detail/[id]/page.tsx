@@ -14,10 +14,10 @@ export default function DiaryDetailPage() {
     const useDiary = useDiaryValue()
 
     const initDiary: Diary = {
-        id: "0",
+        id: '0',
         date: new Date(),
-        title: "title",
-        content: "content",
+        title: 'title',
+        content: 'content',
         emotion: 'soso',
         weather: 'cloud',
         views: 0,
@@ -37,10 +37,10 @@ export default function DiaryDetailPage() {
 
     useEffect(() => {
         const realDiary = useDiary.find((diary) => diary.id === id)
-        if(realDiary) {
+        if (realDiary) {
             setDiary(realDiary)
             update(id, { ...diary, views: diary.views + 1 })
-        }   
+        }
     }, [])
 
     return (
