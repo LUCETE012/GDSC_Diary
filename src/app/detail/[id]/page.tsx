@@ -11,48 +11,36 @@ export default function DiaryDetailPage() {
     const { id } = useParams() as { id: string }
     const router = useRouter()
 
-    const diary: Diary | undefined = useDiaryValue().find((diary) => diary.id === id)
-    // const diary: Diary = useDiaryValue()
-
-    const [initId, setInitId] = useState<string>('')
-    const [initDate, setInitDate] = useState<Date>(new Date())
-    const [initTitle, setInitTitle] = useState<string>('')
-    const [initContent, setInitContent] = useState<string>('')
-    const [initEmotion, setInitEmotion] = useState<string>('')
-    const [initWeather, setInitWeather] = useState<string>('')
-    const [initViews, setInitViews] = useState<number>(0)
+    const useDiary = useDiaryValue()
 
     const initDiary: Diary = {
-        id: initId,
-        date: initDate,
-        title: initTitle,
-        content: initContent,
+        id: "0",
+        date: new Date(),
+        title: "title",
+        content: "content",
         emotion: 'soso',
         weather: 'cloud',
         views: 0,
     }
 
+    const [diary, setDiary] = useState<Diary | undefined>(initDiary)
     const { remove, update } = useStorageDiary()
     const removeDiary = () => {
         remove(id)
         router.push('/')
     }
 
-    // if(diary === undefined) router.push('/')
     if (diary === undefined) throw Error('No Diary')
     const parsedDate = typeof diary.date === 'string' ? new Date(diary.date) : diary.date
 
     const formattedDate = Intl.DateTimeFormat('ko-KR', { dateStyle: 'full' }).format(parsedDate)
 
     useEffect(() => {
-        setInitId('0')
-        setInitDate(new Date())
-        setInitTitle('')
-        setInitContent('')
-        setInitEmotion('')
-        setInitWeather('')
-        setInitViews(0)
-        update(id, { ...diary, views: diary.views + 1 })
+        const realDiary = useDiary.find((diary) => diary.id === id)
+        if(realDiary) {
+            setDiary(realDiary)
+            update(id, { ...diary, views: diary.views + 1 })
+        }   
     }, [])
 
     return (
